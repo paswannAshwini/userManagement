@@ -1,0 +1,25 @@
+<div class="user-management">
+  <h2 class="userManagement-heading">User Management</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Created</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" (click)="openUserDetails(user)">
+        <td>{{ user.userId }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.created }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
