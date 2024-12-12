@@ -1,0 +1,31 @@
+<!-- <div class="user-details">
+    <h2 class="dilaog-box-heading">User Details</h2>
+    <p><strong>First Name:</strong> {{ data.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ data.lastName }}</p>
+    <p><strong>Email:</strong> {{ data.email }}</p>
+    <p><strong>Created:</strong> {{ data.created | date: 'short' }}</p>
+  </div> -->
+
+
+  <div class="user-details">
+    <h2 class="dialog-box-heading">User  Details</h2>
+    <form [formGroup]="userForm" (ngSubmit)="updateUser ()">
+      <p>
+        <strong>First Name:</strong>
+        <input formControlName="firstName" type="text">
+      </p>
+      <p>
+        <strong>Last Name:</strong>
+        <input formControlName="lastName" type="text">
+      </p>
+      <p>
+        <strong>Email:</strong> {{ data.email }}
+      </p>
+      <p>
+        <strong>Created:</strong> {{ data.created | date: 'short' }}
+      </p>
+      <button type="submit">Update</button>
+      <button type="button" (click)="closeDialog()">Reset</button>
+    </form>
+  </div>
+  
