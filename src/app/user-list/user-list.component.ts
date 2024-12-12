@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
-import {UserDetailsDialogComponent} from '../user-details-dialog/user-details-dialog.component'
-import { MatDialog } from '@angular/material/dialog';
+import { UserService } from '../user.service';  // Import the UserService to fetch user data
+import {UserDetailsDialogComponent} from '../user-details-dialog/user-details-dialog.component' // Dialog component for displaying user details
+import { MatDialog } from '@angular/material/dialog'; // Import Angular Material dialog module
 
 @Component({
   selector: 'app-user-list',
@@ -9,9 +9,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users: any[] = [];
+  users: any[] = []; // Array to store the list of users
   data : any = {
-    memberCount: 3,
+    memberCount: 3, // Number of members (for local data)
     members: [
     {
     user: {
@@ -46,19 +46,21 @@ export class UserListComponent implements OnInit {
   constructor(private userService: UserService ,private dialog: MatDialog) { }
 
   ngOnInit(): void {
-  this.allUserListing();
+  this.allUserListing(); // Fetch the user list when the component initializes
   }
 
   allUserListing(){
     this.userService.getUsers().subscribe((result)=>{
       // this.users = result.data.members.map((member: any) => member.user);
     })
+     // For now, use local data to populate the users array
     this.users = this.data.members.map((member: any) => member.user);
   }
 
+   // Open a dialog to display user details
   openUserDetails(user: any): void {
     this.dialog.open(UserDetailsDialogComponent, {
-      data: user,
+      data: user, // Pass the selected user data to the dialog
     });
   }
 

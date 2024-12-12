@@ -1,0 +1,9 @@
+SOLID Principles 
+
+S: One job per class (Single Responsibility Principle)
+O: Add new features without changing existing code (Open/Closed Principle)
+L: Parent and child classes should be interchangeable (Liskov Substitution Principle)
+I: Don't force classes to implement unnecessary methods (Interface Segregation Principle)
+D: High-level modules shouldn't depend on low-level modules, use abstractions instead (Dependency Inversion Principle)
+
+These principles help you write clean, flexible, and maintainable code
